@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A372B5B625E0037A7E0 /* MotionManager.swift */; };
+		0A152A3A2B5B63EC0037A7E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A392B5B63EC0037A7E0 /* Constants.swift */; };
+		0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A3B2B5B70A70037A7E0 /* HistoryView.swift */; };
+		0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A752EFF2B5B3EDC00FEE1DB /* StartView.swift */; };
+		0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */; };
+		0A7F99352B59B69E0065A3E9 /* SwingCounter Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0A7F99342B59B69E0065A3E9 /* SwingCounter Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A7F993A2B59B69E0065A3E9 /* SwingCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F99392B59B69E0065A3E9 /* SwingCounterApp.swift */; };
+		0A7F993C2B59B69E0065A3E9 /* DataCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F993B2B59B69E0065A3E9 /* DataCollectionView.swift */; };
+		0A7F993E2B59B6A00065A3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */; };
+		0A7F99412B59B6A00065A3E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A7F99362B59B69E0065A3E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A7F99282B59B69E0065A3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A7F99332B59B69E0065A3E9;
+			remoteInfo = "SwingCounter Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A7F99472B59B6A00065A3E9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0A7F99352B59B69E0065A3E9 /* SwingCounter Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A152A372B5B625E0037A7E0 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		0A152A392B5B63EC0037A7E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A152A3B2B5B70A70037A7E0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0A752EFF2B5B3EDC00FEE1DB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		0A752F052B5B48DE00FEE1DB /* SwingCounter Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SwingCounter Watch App.entitlements"; sourceTree = "<group>"; };
+		0A752F062B5B498100FEE1DB /* SwingCounter-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwingCounter-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		0A7F992E2B59B69E0065A3E9 /* SwingCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A7F99342B59B69E0065A3E9 /* SwingCounter Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwingCounter Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A7F99392B59B69E0065A3E9 /* SwingCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingCounterApp.swift; sourceTree = "<group>"; };
+		0A7F993B2B59B69E0065A3E9 /* DataCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionView.swift; sourceTree = "<group>"; };
+		0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A7F99312B59B69E0065A3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A752F012B5B3EE700FEE1DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A752EFF2B5B3EDC00FEE1DB /* StartView.swift */,
+				0A7F993B2B59B69E0065A3E9 /* DataCollectionView.swift */,
+				0A152A3B2B5B70A70037A7E0 /* HistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0A752F022B5B450000FEE1DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A152A372B5B625E0037A7E0 /* MotionManager.swift */,
+				0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A7F99272B59B69E0065A3E9 = {
+			isa = PBXGroup;
+			children = (
+				0A7F99382B59B69E0065A3E9 /* SwingCounter Watch App */,
+				0A7F992F2B59B69E0065A3E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0A7F992F2B59B69E0065A3E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A7F992E2B59B69E0065A3E9 /* SwingCounter.app */,
+				0A7F99342B59B69E0065A3E9 /* SwingCounter Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A7F99382B59B69E0065A3E9 /* SwingCounter Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				0A752F062B5B498100FEE1DB /* SwingCounter-Watch-App-Info.plist */,
+				0A752F052B5B48DE00FEE1DB /* SwingCounter Watch App.entitlements */,
+				0A7F99392B59B69E0065A3E9 /* SwingCounterApp.swift */,
+				0A752F012B5B3EE700FEE1DB /* Views */,
+				0A752F022B5B450000FEE1DB /* Models */,
+				0A152A392B5B63EC0037A7E0 /* Constants.swift */,
+				0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */,
+				0A7F993F2B59B6A00065A3E9 /* Preview Content */,
+			);
+			path = "SwingCounter Watch App";
+			sourceTree = "<group>";
+		};
+		0A7F993F2B59B6A00065A3E9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A7F992D2B59B69E0065A3E9 /* SwingCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A7F99482B59B6A00065A3E9 /* Build configuration list for PBXNativeTarget "SwingCounter" */;
+			buildPhases = (
+				0A7F992C2B59B69E0065A3E9 /* Resources */,
+				0A7F99472B59B6A00065A3E9 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A7F99372B59B69E0065A3E9 /* PBXTargetDependency */,
+			);
+			name = SwingCounter;
+			productName = SwingCounter;
+			productReference = 0A7F992E2B59B69E0065A3E9 /* SwingCounter.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		0A7F99332B59B69E0065A3E9 /* SwingCounter Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A7F99442B59B6A00065A3E9 /* Build configuration list for PBXNativeTarget "SwingCounter Watch App" */;
+			buildPhases = (
+				0A7F99302B59B69E0065A3E9 /* Sources */,
+				0A7F99312B59B69E0065A3E9 /* Frameworks */,
+				0A7F99322B59B69E0065A3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwingCounter Watch App";
+			productName = "SwingCounter Watch App";
+			productReference = 0A7F99342B59B69E0065A3E9 /* SwingCounter Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A7F99282B59B69E0065A3E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					0A7F992D2B59B69E0065A3E9 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					0A7F99332B59B69E0065A3E9 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 0A7F992B2B59B69E0065A3E9 /* Build configuration list for PBXProject "SwingCounter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A7F99272B59B69E0065A3E9;
+			productRefGroup = 0A7F992F2B59B69E0065A3E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A7F992D2B59B69E0065A3E9 /* SwingCounter */,
+				0A7F99332B59B69E0065A3E9 /* SwingCounter Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A7F992C2B59B69E0065A3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A7F99322B59B69E0065A3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A7F99412B59B6A00065A3E9 /* Preview Assets.xcassets in Resources */,
+				0A7F993E2B59B6A00065A3E9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A7F99302B59B69E0065A3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */,
+				0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */,
+				0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */,
+				0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */,
+				0A7F993C2B59B69E0065A3E9 /* DataCollectionView.swift in Sources */,
+				0A7F993A2B59B69E0065A3E9 /* SwingCounterApp.swift in Sources */,
+				0A152A3A2B5B63EC0037A7E0 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A7F99372B59B69E0065A3E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A7F99332B59B69E0065A3E9 /* SwingCounter Watch App */;
+			targetProxy = 0A7F99362B59B69E0065A3E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A7F99422B59B6A00065A3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A7F99432B59B6A00065A3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		0A7F99452B59B6A00065A3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwingCounter Watch App/SwingCounter Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwingCounter Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = BP6AYT996T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwingCounter-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelfalco.SwingCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		0A7F99462B59B6A00065A3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SwingCounter Watch App/SwingCounter Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwingCounter Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = BP6AYT996T;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwingCounter-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelfalco.SwingCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		0A7F99492B59B6A00065A3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BP6AYT996T;
+				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelfalco.SwingCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0A7F994A2B59B6A00065A3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BP6AYT996T;
+				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelfalco.SwingCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A7F992B2B59B69E0065A3E9 /* Build configuration list for PBXProject "SwingCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A7F99422B59B6A00065A3E9 /* Debug */,
+				0A7F99432B59B6A00065A3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A7F99442B59B6A00065A3E9 /* Build configuration list for PBXNativeTarget "SwingCounter Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A7F99452B59B6A00065A3E9 /* Debug */,
+				0A7F99462B59B6A00065A3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A7F99482B59B6A00065A3E9 /* Build configuration list for PBXNativeTarget "SwingCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A7F99492B59B6A00065A3E9 /* Debug */,
+				0A7F994A2B59B6A00065A3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A7F99282B59B69E0065A3E9 /* Project object */;
+}
