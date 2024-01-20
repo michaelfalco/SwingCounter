@@ -376,6 +376,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwingCounter-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "A session starts a workout on the device to read motion data while playing tennis.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Only motion data is read from the device.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +410,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwingCounter-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "A session starts a workout on the device to read motion data while playing tennis.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Only motion data is read from the device.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
