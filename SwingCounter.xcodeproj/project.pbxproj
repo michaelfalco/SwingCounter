@@ -17,6 +17,7 @@
 		0A7F993C2B59B69E0065A3E9 /* DataCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7F993B2B59B69E0065A3E9 /* DataCollectionView.swift */; };
 		0A7F993E2B59B6A00065A3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */; };
 		0A7F99412B59B6A00065A3E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */; };
+		0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8483292B5DB968007980B1 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0A7F993B2B59B69E0065A3E9 /* DataCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionView.swift; sourceTree = "<group>"; };
 		0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0A8483292B5DB968007980B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		0A752F022B5B450000FEE1DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A8483292B5DB968007980B1 /* DataManager.swift */,
 				0A152A372B5B625E0037A7E0 /* MotionManager.swift */,
 				0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */,
 			);
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */,
+				0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */,
 				0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */,
 				0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */,
 				0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */,

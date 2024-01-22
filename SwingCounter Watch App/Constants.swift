@@ -5,15 +5,25 @@
 //  Created by Michael Falco on 1/19/24.
 //
 
-import Foundation
+import UIKit
 
 struct K {
+    
+    struct Asset {
+        static let appIcon = UIImage(named: "AppIcon") ?? UIImage()
+        static let motionFile = UIImage(named: "MotionFileIcon") ?? UIImage()
+    }
     
     struct Limit {
         static let accelThreshold: Double = 3.5
         static let gyroThreshold: Double = 12
         static let timeBetweenSwings: TimeInterval = 2
         static let sampleFrequency: Double = 0.2
+    }
+    
+    struct Symbol {
+        static let file: String = "doc.text"
+        static let share: String = "square.and.arrow.up.circle.fill"
     }
     
 }

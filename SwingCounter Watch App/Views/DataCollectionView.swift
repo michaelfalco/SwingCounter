@@ -139,7 +139,7 @@ struct DataCollectionView: View {
         Button("Accel") {
             showingAccel = true
         }
-        .foregroundStyle(showingAccel ? Color.white : Color.white.opacity(0.5))
+        .opacity(showingAccel ? 1.0 : 0.5)
         .font(.headline.smallCaps())
         .buttonStyle(.plain)
     }
@@ -148,7 +148,7 @@ struct DataCollectionView: View {
         Button("Gyro") {
             showingAccel = false
         }
-        .foregroundStyle(!showingAccel ? Color.white : Color.white.opacity(0.5))
+        .opacity(!showingAccel ? 1.0 : 0.5)
         .font(.headline.smallCaps())
         .buttonStyle(.plain)
     }
@@ -167,7 +167,7 @@ struct DataCollectionView: View {
     //MARK: - Data Analysis View
     
     let barMax: Double = 15
-    let multiplier: Double = K.Limit.gyroThreshold / K.Limit.accelThreshold
+    let accelMultiplier: Double = K.Limit.gyroThreshold / K.Limit.accelThreshold
     
     var graphTab: some View {
         VStack {
@@ -181,31 +181,30 @@ struct DataCollectionView: View {
                 // Plot Magnitudes
                 ForEach(motionManager.dataPoints) { coord in
                     
-                    let magnitudes = [
-                        (period: "Gyroscope", data: coord.gyroMagnitude),
-                        (period: "Accelerometer", data: coord.accelMagnitude * multiplier)
+                    let magnitudes: [(sensor: String, reading: Double)] = [
+                        (sensor: "Accelerometer", reading: coord.accelMagnitude * accelMultiplier),
+                        (sensor: "Gyroscope", reading: coord.gyroMagnitude)
                     ]
                     
-                    ForEach(magnitudes, id: \.period) { magnitude in
-                        let y: Double = (magnitude.data > barMax) ? barMax : magnitude.data
+                    ForEach(magnitudes, id: \.sensor) { magnitude in
+                        let x: String = "\(magnitude.sensor): \(coord.id)"
+                        let y: Double = (magnitude.reading > barMax) ? barMax : magnitude.reading
                         
-                        BarMark( x: .value("Timestamp", "\(magnitude.period): \(coord.id)"),
-                                 y: .value(magnitude.period, y),
+                        BarMark( x: .value("Timestamp", x),
+                                 y: .value("Reading", y),
                                  width: .automatic,
                                  stacking: .unstacked )
-                        .foregroundStyle(by: .value("Sensor", magnitude.period))
+                        .foregroundStyle(by: .value("Sensor", magnitude.sensor))
                     }
                 }
                 
                 // Threshold Line
-                RuleMark(
-                    y: .value("Threshold", K.Limit.gyroThreshold)
-                )
-                .foregroundStyle(.green)
+                RuleMark(y: .value("Threshold", K.Limit.gyroThreshold))
+                    .foregroundStyle(.green)
                 
             }
             .chartForegroundStyleScale([
-                "Accelerometer" : Color.blue, "Gyroscope" : Color.red
+                "Accelerometer": Color.blue, "Gyroscope": Color.red
             ])
             .chartXAxis(.hidden)
             .chartYAxis {

@@ -21,7 +21,7 @@ struct StartView: View {
                     
                     // Intro
                     VStack {
-                        Image(uiImage: UIImage(named: "AppIcon") ?? UIImage())
+                        Image(uiImage: K.Asset.appIcon)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 40)
@@ -60,7 +60,7 @@ struct StartView: View {
                     NavigationLink {
                         HistoryView()
                     } label: {
-                        Image(systemName: "doc.text")
+                        Image(systemName: K.Symbol.file)
                     }
                 }
                 

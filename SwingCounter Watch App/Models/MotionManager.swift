@@ -25,26 +25,26 @@ class MotionManager: ObservableObject {
     
     //MARK: - Change Collection State
     
-    // Start Motion Collection
+    // Start Collection
     func startCollection() {
         let queue = OperationQueue.main
         
         // Set Interval
         manager.deviceMotionUpdateInterval = K.Limit.sampleFrequency
         
-        // Start Updates
+        // Start Motion Updates
         manager.startDeviceMotionUpdates(to: queue) { (data, error) in
             if let data = data {
                 
                 // Store Data
-                let newCoord = Coordinate(data: data)
+                let newCoord = Coordinate(motionData: data)
                 self.dataPoints.append(newCoord)
                 self.determineSwing(newCoord)
             }
         }
     }
     
-    // Stop Motion Collection
+    // Stop Collection
     func stopCollection() {
         manager.stopDeviceMotionUpdates()
     }
@@ -84,7 +84,8 @@ class MotionManager: ObservableObject {
         
         // Store Data
         if !dataPoints.isEmpty {
-            #warning("NEEDS data persistance")
+            let persistence = DataManager()
+            persistence.writeToCSV(data: dataPoints)
         }
         
         // Reset Cache
@@ -114,21 +115,21 @@ struct Coordinate: Identifiable {
     let gyroZ: String
     let gyroMagnitude: Double
     
-    init(data: CMDeviceMotion) {
+    init(motionData: CMDeviceMotion) {
         
         // Acceleration
-        let x = data.userAcceleration.x
-        let y = data.userAcceleration.y
-        let z = data.userAcceleration.z
+        let x = motionData.userAcceleration.x
+        let y = motionData.userAcceleration.y
+        let z = motionData.userAcceleration.z
         self.accelMagnitude = abs(x) + abs(y) + abs(z)
         self.accelX = x.formatted(.number.precision(.fractionLength(1)))
         self.accelY = y.formatted(.number.precision(.fractionLength(1)))
         self.accelZ = z.formatted(.number.precision(.fractionLength(1)))
         
         // Rotation
-        let rX = data.rotationRate.x
-        let rY = data.rotationRate.y
-        let rZ = data.rotationRate.z
+        let rX = motionData.rotationRate.x
+        let rY = motionData.rotationRate.y
+        let rZ = motionData.rotationRate.z
         self.gyroMagnitude = abs(rX) + abs(rY) + abs(rZ)
         self.gyroX = rX.formatted(.number.precision(.fractionLength(1)))
         self.gyroY = rX.formatted(.number.precision(.fractionLength(1)))
