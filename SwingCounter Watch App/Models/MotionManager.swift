@@ -96,6 +96,7 @@ class MotionManager: ObservableObject {
     func reset() {
         dataPoints = []
         swingCount = 0
+        lastSwingTimestamp = nil
     }
 }
 
