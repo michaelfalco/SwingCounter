@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreMotion
 import Charts
 
 struct DataCollectionView: View {
@@ -18,31 +17,50 @@ struct DataCollectionView: View {
     @State var tabSelection: Int = 1
     @State var running: Bool = false
     @State var showingAccel: Bool = true
+    @State var tearingDown: Bool = false
     
     //Content View
     var body: some View {
-        TabView(selection: $tabSelection) {
+        ZStack {
             
-            // Exit Button Tab
-            exitButton
-                .tag(0)
-            
-            // Collection Tab
-            collectionTab
-                .tag(1)
-            
-            // Graph Tab
-            graphTab
-                .tag(2)
-        }
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Clear") {
-                    motionManager.reset()
+            if !tearingDown {
+                TabView(selection: $tabSelection) {
+                    
+                    // Exit Button Tab
+                    exitButton
+                        .tag(0)
+                    
+                    // Collection Tab
+                    collectionTab
+                        .tag(1)
+                    
+                    // Graph Tab
+                    graphTab
+                        .tag(2)
+                    
                 }
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Clear") {
+                            motionManager.queue.cancelAllOperations()
+                            motionManager.reset()
+                        }
+                        .disabled(running)
+                    }
+                }
+                
+            } else {
+                teardownView
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                cancelTeardown()
+                            }
+                        }
+                    }
             }
         }
+        .navigationBarBackButtonHidden()
     }
     
     // Exit Button
@@ -64,14 +82,38 @@ struct DataCollectionView: View {
         .buttonStyle(.plain)
     }
     
-    // Exit Button Pressed
+    // Teardown Button Pressed
     func teardown() {
+        
+        // Show Loading View
+        tearingDown = true
         
         // End Workout
         workoutManager.end()
         
         // Stop Motion Updates & Save Data
         motionManager.teardown()
+        
+        // Exit Session after Teardown
+        motionManager.queue.addOperation {
+            inSession = false
+        }
+    }
+    
+    // Teardown Loading Screen
+    var teardownView: some View {
+        VStack {
+            ProgressView()
+                .frame(height: 50)
+            Text("Tearing Down...")
+                .font(.headline.smallCaps())
+        }
+    }
+    
+    // Teardown Cancelled
+    func cancelTeardown() {
+        // Terminate Remaining Queue
+        motionManager.cancelTeardown()
         
         // Exit Session
         inSession = false
@@ -89,7 +131,7 @@ struct DataCollectionView: View {
                 Spacer()
                 
                 ScrollView {
-                    ForEach(motionManager.dataPoints) { coord in
+                    ForEach(motionManager.displayedDataPoints) { coord in
                         HStack {
                             let x = showingAccel ? coord.accelX : coord.gyroX
                             let y = showingAccel ? coord.accelY : coord.gyroY
@@ -116,7 +158,7 @@ struct DataCollectionView: View {
             }
             
             Button(
-                running ? "Pause" : (motionManager.dataPoints.isEmpty ? "Start" : "Resume")
+                running ? "Pause" : (motionManager.displayedDataPoints.isEmpty ? "Start" : "Resume")
             ) { toggleCollectionState() }
         }
     }
@@ -179,7 +221,7 @@ struct DataCollectionView: View {
             Chart {
                 
                 // Plot Magnitudes
-                ForEach(motionManager.dataPoints) { coord in
+                ForEach(motionManager.displayedDataPoints) { coord in
                     
                     let magnitudes: [(sensor: String, reading: Double)] = [
                         (sensor: "Accelerometer", reading: coord.accelMagnitude * accelMultiplier),

@@ -18,33 +18,44 @@ class MotionManager: ObservableObject {
     let gyroThreshold = K.Limit.gyroThreshold
     
     // Data
-    @Published var dataPoints: [Coordinate] = []
     @Published var swingCount: Int = 0
+    @Published var displayedDataPoints: [Coordinate] = []
+    private var dataPoints: [Coordinate] = []
     private var lastSwingTimestamp: Date?
+    
+    // Operations
+    let queue = OperationQueue.main
     
     
     //MARK: - Change Collection State
     
-    // Start Collection
+    /// Use this method to start the collection of motion data.
     func startCollection() {
-        let queue = OperationQueue.main
         
         // Set Interval
         manager.deviceMotionUpdateInterval = K.Limit.sampleFrequency
         
         // Start Motion Updates
-        manager.startDeviceMotionUpdates(to: queue) { (data, error) in
+        manager.startDeviceMotionUpdates(to: queue) { [self] (data, error) in
             if let data = data {
                 
                 // Store Data
                 let newCoord = Coordinate(motionData: data)
-                self.dataPoints.append(newCoord)
-                self.determineSwing(newCoord)
+                dataPoints.append(newCoord)
+                
+                // Display Data
+                displayedDataPoints.append(newCoord)
+                if displayedDataPoints.count > K.Limit.displayedDataPoints {
+                    displayedDataPoints.remove(at: 0)
+                }
+                
+                // Determine if Swing Count Increased
+                determineSwing(newCoord)
             }
         }
     }
     
-    // Stop Collection
+    /// Use this method to pause the collection of motion data.
     func stopCollection() {
         manager.stopDeviceMotionUpdates()
     }
@@ -52,7 +63,8 @@ class MotionManager: ObservableObject {
     
     //MARK: - Data Processing
     
-    // Determine Swing
+    /// Use this method to determine if the live swing count should be increased based on given motion data and the time since the last swing was counted.
+    /// - Parameter coord: Motion Data of type `Coordinate` containing accelerometer and gyroscope data at a given timestamp.
     func determineSwing(_ coord: Coordinate) {
             let accelMagnitude = coord.accelMagnitude
             let gyroMagnitude = coord.gyroMagnitude
@@ -77,24 +89,38 @@ class MotionManager: ObservableObject {
             }
     }
     
-    // Stop Collection & Store Data on Teardown
+    /// Use this method to stop the collection of motion data and persist the data to local storage.
     func teardown() {
         // Stop Collection
         stopCollection()
         
-        // Store Data
-        if !dataPoints.isEmpty {
-            let persistence = DataManager()
-            persistence.writeToCSV(data: dataPoints)
+        // Add Storing Data & Resetting Cache to Operations Queue
+        queue.addOperation { [self] in
+            
+            // Store Data
+            if !dataPoints.isEmpty {
+                let persistence = DataManager()
+                persistence.writeToCSV(data: dataPoints)
+            }
+            
+            // Reset Cache
+            reset()
         }
+    }
+    
+    /// Trigger this method to cancel an in-progress teardown
+    func cancelTeardown() {
+        // Cancel Remaining Operations
+        queue.cancelAllOperations()
         
         // Reset Cache
         reset()
     }
     
-    // Reset Cached Data
+    /// Use this method to reset cached variables.
     func reset() {
         dataPoints = []
+        displayedDataPoints = []
         swingCount = 0
         lastSwingTimestamp = nil
     }

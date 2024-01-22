@@ -14,7 +14,7 @@ class DataManager {
     
     //MARK: - Write
     
-    /// Creates a CSV from the data array
+    /// Creates a CSV from the data array and stores it on device.
     func writeToCSV(data: [Coordinate]) {
         let timestamp = Date()
         
@@ -48,7 +48,7 @@ class DataManager {
     
     //MARK: - Read
     
-    /// Returns a List of CSV Files
+    /// Returns a List of CSV files stored on the device.
     func readCSVDirectory() -> [MotionFile] {
         var files: [MotionFile] = []
         
@@ -81,6 +81,9 @@ class DataManager {
     
     //MARK: - Delete
     
+    
+    /// Deletes a file from device storage at the given URL.
+    /// - Parameter url: A `URL` for the file to be removed.
     func delete(_ url: URL) {
         do {
             try fileManager.removeItem(at: url)
