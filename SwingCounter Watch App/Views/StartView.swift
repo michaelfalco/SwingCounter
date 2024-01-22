@@ -35,6 +35,7 @@ struct StartView: View {
                             .font(.footnote.smallCaps())
                             .fontWeight(.light)
                     }
+                    .padding(.horizontal)
                     
                     // Instruction
                     Text("Thank you for participating in the study. Tap GO to enter a swing session:")
