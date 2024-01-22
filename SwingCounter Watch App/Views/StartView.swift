@@ -12,6 +12,8 @@ struct StartView: View {
     //Initializers & Variables
     @EnvironmentObject var workoutManager: WorkoutManager
     @State var inSession: Bool = false
+    let appVersion: String = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    let buildNumber: String = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
     
     //Content View
     var body: some View {
@@ -28,6 +30,10 @@ struct StartView: View {
                             .clipShape(Circle())
                         
                         Text("Welcome to\n**SwingCounter**\nby *Tennis Scorecard.*")
+                        Divider()
+                        Text("Version \(appVersion) (Build \(buildNumber))")
+                            .font(.footnote.smallCaps())
+                            .fontWeight(.light)
                     }
                     
                     // Instruction
