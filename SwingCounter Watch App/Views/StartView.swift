@@ -29,7 +29,7 @@ struct StartView: View {
                             .frame(height: 40)
                             .clipShape(Circle())
                         
-                        Text("Welcome to\n**SwingCounter**\nby *Tennis Scorecard.*")
+                        Text("Welcome to\n**SwingCounter**\nby *Tennis Scorecard*")
                         Divider()
                         Text("Version \(appVersion) (Build \(buildNumber))")
                             .font(.footnote.smallCaps())

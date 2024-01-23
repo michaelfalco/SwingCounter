@@ -65,7 +65,16 @@ struct HistoryView: View {
     
     /// Run this method to populate the list with Stored CSVs
     func populateDirectory() {
+        // Pull CSV Files
         files = dataManager.readCSVDirectory()
+        
+        // Sort By Creation Date
+        files.sort {
+            let aTimestamp: Date = $0.timestamp ?? Date()
+            let bTimestamp: Date = $1.timestamp ?? Date()
+            
+            return aTimestamp > bTimestamp
+        }
     }
     
     /// Run this method to delete files
