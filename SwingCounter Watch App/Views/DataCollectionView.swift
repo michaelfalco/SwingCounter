@@ -195,6 +195,7 @@ struct DataCollectionView: View {
         .buttonStyle(.plain)
     }
     
+    /// Call this method to start, pause, or resume motion collection.
     func toggleCollectionState() {
         if running {
             motionManager.stopCollection()

@@ -18,7 +18,7 @@ struct K {
         static let accelThreshold: Double = 3.5
         static let gyroThreshold: Double = 12
         static let timeBetweenSwings: TimeInterval = 2
-        static let sampleFrequency: Double = 0.2
+        static let sampleFrequency: Double = 0.1
         static let displayedDataPoints: Int = 100
     }
     
