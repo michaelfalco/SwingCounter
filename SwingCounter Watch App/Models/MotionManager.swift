@@ -25,19 +25,21 @@ class MotionManager: ObservableObject {
     
     // Operations
     let queue = OperationQueue.main
+    private var collectionCancelled: Bool = false
     
     
     //MARK: - Change Collection State
     
     /// Use this method to start the collection of motion data.
     func startCollection() {
+        collectionCancelled = false
         
         // Set Interval
         manager.deviceMotionUpdateInterval = K.Limit.sampleFrequency
         
         // Start Motion Updates
         manager.startDeviceMotionUpdates(to: queue) { [self] (data, error) in
-            if let data = data {
+            if let data = data, !collectionCancelled {
                 
                 // Store Data
                 let newCoord = Coordinate(motionData: data)
@@ -108,8 +110,13 @@ class MotionManager: ObservableObject {
         }
     }
     
-    /// Trigger this method to cancel an in-progress teardown
+    /// Trigger this method to cancel an in-progress teardown.
+    ///
+    /// This method can also be called for the "Clear" button.
     func cancelTeardown() {
+        // Cancel Executing Operations
+        collectionCancelled = true
+        
         // Cancel Remaining Operations
         queue.cancelAllOperations()
         

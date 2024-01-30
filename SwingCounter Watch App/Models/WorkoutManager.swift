@@ -22,7 +22,7 @@ class WorkoutManager: NSObject, ObservableObject {
         configuration.activityType = .tennis
         configuration.locationType = .outdoor
         
-        // Create the session and obtain the workout builder
+        // Create the session
         do {
             session = try HKWorkoutSession(healthStore: healthStore, configuration: configuration)
         } catch {

@@ -42,8 +42,7 @@ struct DataCollectionView: View {
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Clear") {
-                            motionManager.queue.cancelAllOperations()
-                            motionManager.reset()
+                            motionManager.cancelTeardown()
                         }
                         .disabled(running)
                     }
@@ -209,7 +208,7 @@ struct DataCollectionView: View {
     
     //MARK: - Data Analysis View
     
-    let barMax: Double = 15
+    let barMax: Double = K.Limit.gyroThreshold + 2
     let accelMultiplier: Double = K.Limit.gyroThreshold / K.Limit.accelThreshold
     
     var graphTab: some View {

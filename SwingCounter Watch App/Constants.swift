@@ -9,18 +9,26 @@ import UIKit
 
 struct K {
     
+    //MARK: - UI Images
+    
     struct Asset {
         static let appIcon = UIImage(named: "AppIcon") ?? UIImage()
         static let motionFile = UIImage(named: "MotionFileIcon") ?? UIImage()
     }
     
+    
+    //MARK: - Limits
+    
     struct Limit {
-        static let accelThreshold: Double = 3.5
-        static let gyroThreshold: Double = 12
+        static let accelThreshold: Double = 3
+        static let gyroThreshold: Double = 8
         static let timeBetweenSwings: TimeInterval = 2
         static let sampleFrequency: Double = 0.1
         static let displayedDataPoints: Int = 100
     }
+    
+    
+    //MARK: - SF Symbols
     
     struct Symbol {
         static let file: String = "doc.text"
