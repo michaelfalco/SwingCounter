@@ -9,7 +9,7 @@ import UIKit
 
 struct K {
     
-    //MARK: - UI Images
+    //MARK: - Asset Images
     
     struct Asset {
         static let appIcon = UIImage(named: "AppIcon") ?? UIImage()
