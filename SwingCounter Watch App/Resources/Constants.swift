@@ -25,6 +25,7 @@ struct K {
         static let timeBetweenSwings: TimeInterval = 2
         static let sampleFrequency: Double = 0.1
         static let displayedDataPoints: Int = 100
+        static let classifierDataPoints: Int = 21
     }
     
     

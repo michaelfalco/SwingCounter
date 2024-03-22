@@ -13,6 +13,9 @@ class MotionManager: ObservableObject {
     // Core Motion
     let manager = CMMotionManager()
     
+    // Core ML
+    let classifier = ClassifierModel()
+    
     // Thresholds
     let accelThreshold = K.Limit.accelThreshold
     let gyroThreshold = K.Limit.gyroThreshold
@@ -20,6 +23,7 @@ class MotionManager: ObservableObject {
     // Data
     @Published var swingCount: Int = 0
     @Published var displayedDataPoints: [Coordinate] = []
+    private var processingDataPoints: [Coordinate] = []
     private var dataPoints: [Coordinate] = []
     private var lastSwingTimestamp: Date?
     
@@ -51,8 +55,16 @@ class MotionManager: ObservableObject {
                     displayedDataPoints.remove(at: 0)
                 }
                 
-                // Determine if Swing Count Increased
-                determineSwing(newCoord)
+                // Queue For ML Processing
+                processingDataPoints.append(newCoord)
+                if processingDataPoints.count >= K.Limit.classifierDataPoints {
+                    
+                    // Determine if Swing Count Increased
+                    determineSwing(processingDataPoints)
+                    
+                    // Remove First Data Point
+                    processingDataPoints.remove(at: 0)
+                }
             }
         }
     }
@@ -66,29 +78,33 @@ class MotionManager: ObservableObject {
     //MARK: - Data Processing
     
     /// Use this method to determine if the live swing count should be increased based on given motion data and the time since the last swing was counted.
-    /// - Parameter coord: Motion Data of type `Coordinate` containing accelerometer and gyroscope data at a given timestamp.
-    func determineSwing(_ coord: Coordinate) {
-            let accelMagnitude = coord.accelMagnitude
-            let gyroMagnitude = coord.gyroMagnitude
-            let timestamp = coord.id
+    /// - Parameter coordinates: Motion Data array of type `Coordinate` containing accelerometer and gyroscope data for the past 2 seconds.
+    func determineSwing(_ coordinates: [Coordinate]) {
+        
+        // Determine if Data Contains a Swing
+        guard let timestamp = coordinates.last?.id,
+              let mlOutput = classifier.determineSwing(from: coordinates),
+              mlOutput.Label == MachineLearningLabel.swing.rawValue
+        else { return }
+        
+        // Check for Previous Swings
+        if let previous = lastSwingTimestamp {
             
-            if (accelMagnitude > accelThreshold) && (gyroMagnitude > gyroThreshold) {
+            // Check Time Since Last Swing
+            let timeBetweenDataPoints = timestamp.timeIntervalSince(previous)
+            if timeBetweenDataPoints > K.Limit.timeBetweenSwings {
                 
-                if let previous = lastSwingTimestamp {
-                    // Check time since last swing
-                    let timeBetweenDataPoints = timestamp.timeIntervalSince(previous)
-                    if timeBetweenDataPoints > K.Limit.timeBetweenSwings {
-                        lastSwingTimestamp = timestamp
-                        swingCount += 1
-                    }
-                    
-                } else {
-                    // First Swing
-                    lastSwingTimestamp = timestamp
-                    swingCount += 1
-                }
+                // Count as Swing
+                lastSwingTimestamp = timestamp
+                swingCount += 1
                 
             }
+            
+        } else {
+            // Count First Swing
+            lastSwingTimestamp = timestamp
+            swingCount += 1
+        }
     }
     
     /// Use this method to stop the collection of motion data and persist the data to local storage.

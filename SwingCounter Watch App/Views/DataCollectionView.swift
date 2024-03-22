@@ -240,10 +240,6 @@ struct DataCollectionView: View {
                     }
                 }
                 
-                // Threshold Line
-                RuleMark(y: .value("Threshold", K.Limit.gyroThreshold))
-                    .foregroundStyle(.green)
-                
             }
             .chartForegroundStyleScale([
                 "Accelerometer": Color.blue, "Gyroscope": Color.red

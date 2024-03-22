@@ -18,6 +18,8 @@
 		0A7F993E2B59B6A00065A3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */; };
 		0A7F99412B59B6A00065A3E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */; };
 		0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8483292B5DB968007980B1 /* DataManager.swift */; };
+		0AC745472BAE1121006D9A59 /* ClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC745462BAE1121006D9A59 /* ClassifierModel.swift */; };
+		0AC745492BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A8483292B5DB968007980B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0AC745462BAE1121006D9A59 /* ClassifierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierModel.swift; sourceTree = "<group>"; };
+		0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionDataClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0CA79A2BAE293F00371846 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A152A392B5B63EC0037A7E0 /* Constants.swift */,
+				0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0A752F012B5B3EE700FEE1DB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +98,9 @@
 		0A752F022B5B450000FEE1DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0AC745462BAE1121006D9A59 /* ClassifierModel.swift */,
 				0A8483292B5DB968007980B1 /* DataManager.swift */,
+				0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */,
 				0A152A372B5B625E0037A7E0 /* MotionManager.swift */,
 				0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */,
 			);
@@ -117,8 +132,7 @@
 				0A7F99392B59B69E0065A3E9 /* SwingCounterApp.swift */,
 				0A752F012B5B3EE700FEE1DB /* Views */,
 				0A752F022B5B450000FEE1DB /* Models */,
-				0A152A392B5B63EC0037A7E0 /* Constants.swift */,
-				0A7F993D2B59B6A00065A3E9 /* Assets.xcassets */,
+				0A0CA79A2BAE293F00371846 /* Resources */,
 				0A7F993F2B59B6A00065A3E9 /* Preview Content */,
 			);
 			path = "SwingCounter Watch App";
@@ -232,6 +246,8 @@
 			files = (
 				0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */,
 				0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */,
+				0AC745472BAE1121006D9A59 /* ClassifierModel.swift in Sources */,
+				0AC745492BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel in Sources */,
 				0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */,
 				0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */,
 				0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */,
@@ -373,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SwingCounter Watch App/SwingCounter Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"SwingCounter Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = BP6AYT996T;
 				ENABLE_PREVIEWS = YES;
@@ -407,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SwingCounter Watch App/SwingCounter Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"SwingCounter Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = BP6AYT996T;
 				ENABLE_PREVIEWS = YES;
@@ -440,7 +456,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = BP6AYT996T;
 				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
 				MARKETING_VERSION = 1.0;
@@ -456,7 +472,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = BP6AYT996T;
 				INFOPLIST_KEY_CFBundleDisplayName = SwingCounter;
 				MARKETING_VERSION = 1.0;
