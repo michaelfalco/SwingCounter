@@ -10,8 +10,7 @@ import CoreML
 
 enum MachineLearningLabel: String {
     case swing = "swing"
-    case bounce = "bounce"
-    case nothing = "nothing"
+    case notSwing = "notSwing"
 }
 
 class ClassifierModel {

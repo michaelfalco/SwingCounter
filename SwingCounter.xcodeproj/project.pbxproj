@@ -10,6 +10,7 @@
 		0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A372B5B625E0037A7E0 /* MotionManager.swift */; };
 		0A152A3A2B5B63EC0037A7E0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A392B5B63EC0037A7E0 /* Constants.swift */; };
 		0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A152A3B2B5B70A70037A7E0 /* HistoryView.swift */; };
+		0A43A0042BAE329F0077710F /* MotionDataClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0A43A0032BAE329F0077710F /* MotionDataClassifier.mlmodel */; };
 		0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A752EFF2B5B3EDC00FEE1DB /* StartView.swift */; };
 		0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */; };
 		0A7F99352B59B69E0065A3E9 /* SwingCounter Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0A7F99342B59B69E0065A3E9 /* SwingCounter Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,7 +20,6 @@
 		0A7F99412B59B6A00065A3E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */; };
 		0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8483292B5DB968007980B1 /* DataManager.swift */; };
 		0AC745472BAE1121006D9A59 /* ClassifierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC745462BAE1121006D9A59 /* ClassifierModel.swift */; };
-		0AC745492BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,7 @@
 		0A152A372B5B625E0037A7E0 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		0A152A392B5B63EC0037A7E0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0A152A3B2B5B70A70037A7E0 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		0A43A0032BAE329F0077710F /* MotionDataClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionDataClassifier.mlmodel; sourceTree = "<group>"; };
 		0A752EFF2B5B3EDC00FEE1DB /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		0A752F052B5B48DE00FEE1DB /* SwingCounter Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SwingCounter Watch App.entitlements"; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		0A7F99402B59B6A00065A3E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A8483292B5DB968007980B1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0AC745462BAE1121006D9A59 /* ClassifierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierModel.swift; sourceTree = "<group>"; };
-		0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionDataClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			children = (
 				0AC745462BAE1121006D9A59 /* ClassifierModel.swift */,
 				0A8483292B5DB968007980B1 /* DataManager.swift */,
-				0AC745482BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel */,
+				0A43A0032BAE329F0077710F /* MotionDataClassifier.mlmodel */,
 				0A152A372B5B625E0037A7E0 /* MotionManager.swift */,
 				0A752F032B5B45AB00FEE1DB /* WorkoutManager.swift */,
 			);
@@ -247,7 +247,7 @@
 				0A152A3C2B5B70A70037A7E0 /* HistoryView.swift in Sources */,
 				0A84832A2B5DB968007980B1 /* DataManager.swift in Sources */,
 				0AC745472BAE1121006D9A59 /* ClassifierModel.swift in Sources */,
-				0AC745492BAE1ADD006D9A59 /* MotionDataClassifier.mlmodel in Sources */,
+				0A43A0042BAE329F0077710F /* MotionDataClassifier.mlmodel in Sources */,
 				0A752F002B5B3EDC00FEE1DB /* StartView.swift in Sources */,
 				0A152A382B5B625E0037A7E0 /* MotionManager.swift in Sources */,
 				0A752F042B5B45AB00FEE1DB /* WorkoutManager.swift in Sources */,
