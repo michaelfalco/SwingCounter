@@ -13,3 +13,13 @@
 <div align="center">
   <img src="Resources/watches.png">
 </div>
+
+## Abstract
+The purpose of this study is to collect device motion data during a tennis match for use as training data for a machine learning model.
+
+<br> <br />
+
+## Data Collection
+
+### Device Requirements
+Requires an Apple Watch running watchOS 10.2 or higher.
