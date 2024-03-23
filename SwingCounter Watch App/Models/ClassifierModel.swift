@@ -51,8 +51,8 @@ class ClassifierModel {
                                              Accel__1_0s_1: motionData[20].accelMagnitude, Gyro__1_0s_1: motionData[20].gyroMagnitude )
         
         // Print Output Label With Probablility
-        if let prediction = output?.LabelProbability.debugDescription {
-            print(prediction)
+        if let prediction = output {
+            print("PREDICTION: " + prediction.Label + ", PROBABILITY: " + prediction.LabelProbability.debugDescription)
         }
         
         // Return Output
