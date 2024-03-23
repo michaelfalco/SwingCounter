@@ -35,4 +35,4 @@ The SwingCounter app is available for participants to download from [TestFlight]
 4. During a session, swipe left to view the live graph and swing counter. The graph shows the previous 10 seconds of data.
 5. Swipe right and tap "Teardown" to end the session.
 6. The session data is stored locally on the watch in a CSV file. Tap the *File* icon on the Start Screen to view and share motion data files.
-7. Email motion data files to [sendmichaelmail@icloud.com](mailto:sendmichaelmail@icloud.com) after completing a session.
+7. Email motion data files to [sendmichaelfeedback@icloud.com](mailto:sendmichaelfeedback@icloud.com) after completing a session.
