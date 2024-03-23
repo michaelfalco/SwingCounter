@@ -13,7 +13,7 @@
 
 ## Overview
 
-*SwingCounter* is an ongoing research study by *[Tennis Scorecard](https://tennisscorecard.app)*. The objective of this study is to collect device motion sensor data during tennis matches. Accelerometer and gyroscope data are collected using a custom-built *SwingCounter* study app on Apple Watch. This app utilizes Apple's Core Motion framework to collect motion data.
+*SwingCounter* is an ongoing research study by *[Tennis Scorecard](https://tennisscorecard.app)*. The objective of this study is to collect device motion sensor data during tennis matches. Accelerometer and gyroscope data are collected using a custom-built study app on Apple Watch. This app utilizes Apple's Core Motion framework to collect motion data.
 
 The findings of this study are used to train and validate a machine learning model. Build 6 of the *SwingCounter* app includes a pre-trained classification model that was trained using the study's pilot data. This model analyzes motion data in real time and displays the detected swing count to the user.
 
