@@ -18,8 +18,10 @@ struct DataCollectionView: View {
     @State var running: Bool = false
     @State var showingAccel: Bool = true
     @State var tearingDown: Bool = false
+    let barMax: Double = K.Limit.gyroThreshold + 2
+    let accelMultiplier: Double = K.Limit.gyroThreshold / K.Limit.accelThreshold
     
-    //Content View
+    // Content View
     var body: some View {
         ZStack {
             
@@ -61,6 +63,15 @@ struct DataCollectionView: View {
         }
         .navigationBarBackButtonHidden()
     }
+    
+}
+
+
+//MARK: - VIEW EXTENSION
+
+extension DataCollectionView {
+    
+    //MARK: Session Exit
     
     // Exit Button
     var exitButton: some View {
@@ -119,7 +130,7 @@ struct DataCollectionView: View {
     }
     
     
-    //MARK: - Data Collection View
+    //MARK: Data Collection Tab
     
     var collectionTab: some View {
         VStack {
@@ -206,10 +217,7 @@ struct DataCollectionView: View {
     }
     
     
-    //MARK: - Data Analysis View
-    
-    let barMax: Double = K.Limit.gyroThreshold + 2
-    let accelMultiplier: Double = K.Limit.gyroThreshold / K.Limit.accelThreshold
+    //MARK: Data Analysis Tab
     
     var graphTab: some View {
         VStack {
@@ -256,7 +264,7 @@ struct DataCollectionView: View {
 }
 
 
-//MARK: - Preview
+//MARK: - PREVIEW
 
 #Preview {
     NavigationStack {

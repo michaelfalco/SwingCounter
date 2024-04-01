@@ -36,6 +36,13 @@ struct HistoryView: View {
         }
     }
     
+}
+
+
+//MARK: - VIEW EXTENSION
+
+extension HistoryView {
+    
     //File View
     func fileLabel(_ timestamp: Date?) -> some View {
         HStack {
@@ -90,6 +97,9 @@ struct HistoryView: View {
         files.remove(atOffsets: offsets)
     }
 }
+
+
+//MARK: - PREVIEW
 
 #Preview {
     NavigationStack {

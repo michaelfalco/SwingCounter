@@ -81,10 +81,16 @@ class MotionManager: ObservableObject {
     /// - Parameter coordinates: Motion Data array of type `Coordinate` containing accelerometer and gyroscope data for the past 2 seconds.
     func determineSwing(_ coordinates: [Coordinate]) {
         
-        // Determine if Data Contains a Swing
+        // Run Swing Data Through Classifier Model
         guard let timestamp = coordinates.last?.id,
-              let mlOutput = classifier.determineSwing(from: coordinates),
-              mlOutput.Label == MachineLearningLabel.swing.rawValue
+              let mlOutput = classifier.determineSwing(from: coordinates)
+        else { return }
+        
+        // Determine if Data Contains a Swing
+        let prediction = mlOutput.Label
+        guard prediction == MachineLearningLabel.swing.rawValue,
+              let probability = mlOutput.LabelProbability[prediction],
+              probability > K.Limit.swingProbability
         else { return }
         
         // Check for Previous Swings

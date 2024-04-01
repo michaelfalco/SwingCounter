@@ -26,6 +26,7 @@ struct K {
         static let sampleFrequency: Double = 0.1
         static let displayedDataPoints: Int = 100
         static let classifierDataPoints: Int = 21
+        static let swingProbability: Double = 0.8
     }
     
     
