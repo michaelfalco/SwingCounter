@@ -28,6 +28,7 @@ class ClassifierModel {
             return nil
         }
         
+        // Pass Motion Data into Model
         let output = try? model?.prediction( Accel__1_0s: motionData[0].accelMagnitude, Gyro__1_0s: motionData[0].gyroMagnitude,
                                              Accel__0_9s: motionData[1].accelMagnitude, Gyro__0_9s: motionData[1].gyroMagnitude,
                                              Accel__0_8s: motionData[2].accelMagnitude, Gyro__0_8s: motionData[2].gyroMagnitude,
